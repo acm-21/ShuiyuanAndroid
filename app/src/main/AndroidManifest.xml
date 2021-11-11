@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sjtu.shuiyuan">
+    package="app.sjtu.acm.webview">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
@@ -9,15 +9,19 @@
         android:icon="@mipmap/logo"
         android:roundIcon="@mipmap/logo"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Shuiyuan">
+        android:theme="@style/Theme.ACMOnline">
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="http" android:host="acm.sjtu.app" />
+                <data android:scheme="https" android:host="acm.sjtu.app" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

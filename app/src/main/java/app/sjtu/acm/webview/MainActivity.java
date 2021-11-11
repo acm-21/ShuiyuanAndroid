@@ -1,4 +1,4 @@
-package com.sjtu.shuiyuan;
+package app.sjtu.acm.webview;
 
 /*
  * Os-FileUp is an Open Source Android Project hosted on GitHub (https://github.com/mgks/Os-FileUp).
@@ -11,7 +11,6 @@ package com.sjtu.shuiyuan;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.Intent;
@@ -25,8 +24,6 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -139,7 +136,9 @@ public class MainActivity extends AppCompatActivity {
         /*-- CUSTOMIZE --*/
         /*-- you can customize these options for your convenience --*/
         // web address or local file location you want to open in webview
-        String webview_url = "https://dev.bbs.sjtu.edu.cn";
+        String webview_url = "https://acm.sjtu.app/";
+        Intent intent = getIntent();
+        if (intent != null && intent.getData() != null) webview_url = intent.getData().toString();
         webView.loadUrl(webview_url);
         webView.setWebChromeClient(new WebChromeClient() {
 

@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.sjtu.shuiyuan"
+        applicationId "app.sjtu.acm.webview"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 2
